@@ -25,7 +25,6 @@ console.log(myFavCar.properties);
 Fiecare instanță va fi memorata Într-o variabilă separată și va avea proprietăți diferite. 
 Afișează proprietățile mașinilor instanțiate folosind getter-ul proprietati.
 */
-
 function main() {
     const car1 = myFavCar;
     const car2 = new Car('Mazda', 'CX-5', 'Green', 111000);
@@ -36,3 +35,35 @@ function main() {
     console.log(car3.properties);
 }
 main();
+
+/*Definește încă o clasa numita `MasinaDeCurse`. 
+Această clasă va moșteni clasa `Masina` definita la exercițiul 1, folosind cuvantul cheie `extends` si va avea un constructor in care 
+se va apela `this.super()` (adica superconstructorul).
+`MasinaDeCurse` va avea o metoda suplimentara numita `participaLaCampionat`, metoda ce va primi un 
+parametru numit `pozitiaInCampionat` (un numar). 
+Metoda va afisa “Am castigat locul ” urmat de valoarea parametrului `pozitiaInCampionat`. 
+Metoda va verifica daca pozitiaInCampionat este un numar mai mare ca 0, iar in cazul in care numarul este mai mic sau egal cu 0, 
+se va afisa mesajul “Nu am castigat niciun premiu”.
+*/
+class RacingCar extends Car {
+    constructor(brand, model, color, km) {
+        super(brand, model, color, km);
+    }
+    attendingToRace(position) {
+        if (position > 0) {
+            console.log(`I won ${position} place.`);
+        }
+        else {
+            console.log("I didn't win any prize.");
+        }
+    }
+}
+const myRacingCar = new RacingCar('Porsche', '956', 'Red', '36000');
+myRacingCar.attendingToRace(1);
+myRacingCar.attendingToRace(10);
+myRacingCar.attendingToRace(-4);
+
+
+
+
+

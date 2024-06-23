@@ -15,7 +15,7 @@ class Car {
     }
     // Definește o metodă de tip `getter` numita `proprietati` care va returna proprietățile mașinii 
     get properties() {
-        return `This is the car I want to buy: ${this.brand}, ${this.model}, ${this.color}, ${this.km} km`;
+        return `Car[brand=${this.brand}, model=${this.model}, color=${this.color}, km=${this.km}]`;
     }
 }
 let myFavCar = new Car('Volvo', 'XC-60', 'Black', 234000);
